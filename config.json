@@ -1,0 +1,15 @@
+{
+  "credentials": {
+    "apiKey": "APP_KEY",
+    "apiSecret": "APP_SECRET", 
+    "username": "USERNAME",
+    "password": "PASSWORD"
+  },
+  "songinfo": {
+    "artist": "ARTIST",
+    "track": "TRACK",
+    "album": "ALBUM"
+  }, 
+  "scrobbleInterval": "25"
+}
+
