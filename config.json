@@ -1,15 +1,16 @@
 {
-  "credentials": {
-    "apiKey": "APP_KEY",
-    "apiSecret": "APP_SECRET", 
-    "username": "USERNAME",
-    "password": "PASSWORD"
-  },
-  "songinfo": {
-    "artist": "ARTIST",
-    "track": "TRACK",
-    "album": "ALBUM"
-  }, 
-  "scrobbleInterval": "25"
+	"credentials": {
+		"comment": "Supports scrobbling on multiple accounts, simply add a comma between each option and set \"accountsNum\" to the number of accounts you'd like to scrobble on. For example: \"['APP_KEY 1', 'APP_KEY2']\"",
+		"accountsNum": 1,
+		"apiKey": ["API_KEY"],
+		"apiSecret": ["API_SECRET"],
+		"username": ["LAST.FM_USERNAME"],
+		"password": ["LAST.FM_PASSWORD"]
+	},
+	"songinfo": {
+		"artist": "ARTIST",
+		"track": "TRACK",
+		"album": "ALBUM"
+	},
+	"scrobbleInterval": "25"
 }
-
