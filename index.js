@@ -12,13 +12,12 @@ try {
 		let rawdata = fs.readFileSync('./config.json');
 		let config = JSON.parse(rawdata);
 		if (
-			config.credentials.apiKey == ['API_KEY'] ||
-			config.credentials.apiSecret == ['API_SECRET'] ||
-			config.credentials.username == ['LAST.FM_USERNAME'] ||
-			config.credentials.password == ['LAST.FM_PASSWORD'] ||
-			config.songinfo.artist == 'ARTIST' ||
-			config.songinfo.track == 'TRACK' ||
-			config.songinfo.album == 'ALBUM'
+			(config.credentials.apiKey == ['API_KEY']) ||
+			(config.credentials.apiSecret == ['API_SECRET']) ||
+			(config.credentials.username == ['LAST.FM_USERNAME']) ||
+			(config.credentials.password == ['LAST.FM_PASSWORD']) ||
+			(config.songinfo.artist == 'ARTIST') ||
+			(config.songinfo.track == 'TRACK')
 		) {
 			console.log('!!config.json is invalid!!');
 			console.log(

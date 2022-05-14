@@ -9,8 +9,7 @@
 	},
 	"songinfo": {
 		"artist": "ARTIST",
-		"track": "TRACK",
-		"album": "ALBUM"
+		"track": "TRACK"
 	},
 	"scrobbleInterval": "25"
 }

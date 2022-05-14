@@ -94,7 +94,25 @@ function sendPost(data, callback) {
 					reqReturn += chunk;
 				});
 				request.on('end', function () {
-					console.log('[POST RESPONSE] : ' + reqReturn);
+					try{
+					if(reqReturn.includes('<lfm status="') && reqReturn.split('<lfm status="')[1].startsWith('ok')){
+						try{
+						console.log(`Scrobbled track ${reqReturn.split('<track corrected="0">')[1].split('</')[0]} by artist ${reqReturn.split('<artist corrected="0">')[1].split('</')[0]}`)
+						} catch {
+							console.log("Track scrobbled succesfully")
+						}
+					} else if(reqReturn.includes('<lfm status="') && reqReturn.split('<lfm status="')[1].startsWith('failed')){
+						if(reqReturn.includes("Rate Limit Exceeded")){
+							console.log("Last.fm rate limit exceeded. It's reccomended to increase scrobbleInterval")
+						} else{
+							console.log("There was some sort of error trying to scrobble this song. API response:\n"+reqReturn)
+						}
+					} else {
+						console.log(reqReturn)
+					}
+					} catch {
+						console.log(reqReturn)
+					}
 					if (typeof callback == 'function') callback(reqReturn);
 				});
 			})
